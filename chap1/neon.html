@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>食べ物</title>
+    <style>
+        .flash1 {
+            padding: 80px;
+            background-color: #008b8b;
+            color: #00ffff;
+            font-size: 150px;
+        }
+
+        .flash2 {
+            padding: 140px;
+            background-color: #8a2be2;
+            color: #f0f8ff;
+            font-size: 70px;
+        }
+
+        .flash3 {
+            padding: 200px;
+            background-color: #ffffe0;
+            color: #1e90ff;
+            font-size: 160px;
+        }
+
+        .flash4 {
+            padding: 200px;
+            background-color: #00ff00;
+            color: #9e36e9;
+            font-size: 170px;
+        }
+
+        .flash5 {
+            padding: 200px;
+            background-color: rgb(99, 240, 233);
+            color: #00ff7f;
+            font-size: 180px;
+        }
+
+        .flash6 {
+            padding: 320px;
+            background-color: rgb(24, 255, 93);
+            color: #290adb;
+            font-size: 160px;
+        }
+    </style>
+</head>
+
+<body id="base">
+    <h1>馬刺し食べたい</h1>
+    <div id="stocker">
+
+    </div>
+
+
+    <script>
+        let timerId;//setInterval()の戻り値を格納する変数
+        let count = 0;//実行回数のカウンター
+
+        function flash() {
+            console.log('flashが呼ばれた！');
+            let base = document.getElementById('base');
+            let r = Math.floor(Math.random() * 6) + 1;//1～6の変数を求めて、変数「r」に代入している
+            console.log('r=' + r);
+            base.className = "flash" + r;//flashという文字と求めたrを連結して、それを左辺にセットしている
+            let stocker = document.getElementById('stocker');
+            stocker.innerHTML = '<p><img src="basashi.jpg" width="1920px" height="1080px"></p>';
+            count += 1;//実行回数をカウント
+            console.log('count=' + count);
+
+            if (count > 52) {
+                clearInterval(timerId);
+            }
+
+        }
+
+
+        window.onload = function () {
+            timerId = setInterval(flash, 500);
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

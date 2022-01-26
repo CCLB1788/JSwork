@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<hTMl lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1～3までの数字に変換する</title>
+</head>
+<script>
+    let rmd = Math.random();
+    console.log('0～1以下の変数:', rmd);
+    rmd = rmd * 3;
+    console.log('0～1以下の変数に3を掛けたもの', rmd);
+    rmd = Math.ceil(rmd);
+    console.log('0～1以下の変数に3を掛けて、切り上げたもの:', rmd);
+
+    //これを1行で書いてみる
+    console.log('------------------------');
+    let rmd1 = Math.ceil(Math.random() * 3);
+    console.log('0～1以下の変数に3を掛けて、切り上げたもの:', rmd1);
+
+</script>

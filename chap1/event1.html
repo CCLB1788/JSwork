@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>要素の作成・追加</title>
+
+</head>
+
+<body>
+
+  <script>
+    function red_flash() {
+      console.log('red_flashが呼ばれた!');
+      let flash = document.getElementById('flash');
+      flash.style.color = 'red';
+    }
+    // let red = document.getElementById('red');
+    // console.log(red.textContent);
+
+    // ページロード時に実行されるイベントハンドラーを登録
+    // window.onload windowオブジェクトのload（ロード）イベント　
+    // イベント処理「JQuery入門教室」p.148 
+    // すべてのDOMツリー構造及び関連リソースが読み込まれたというイベント
+    // そのイベント（ページロード終了時）に実行される処理を登録している
+
+    window.onload = function () {
+      //ここに　console.log()でページロードが完了!と表示する命令を書いてください
+      console.log('ページロードが完了！');
+      //getElementByIdメソッドは引数にid属性の値を指定することで、
+      //値が一致した要素をdocumentオブジェクト内からHTML要素を取得する
+      // ここに　id="red"の要素を取得する命令を書いてください
+      let red = document.getElementById('red');
+      console.log(red);
+      //redボタンがクリックされたら、色を変えるようにする　色を変える関数を呼び出す
+      red.addEventListener('click', red_flash, flash);
+
+
+    }
+
+  </script>
+
+  <p id="flash">flash text</p>
+  <button id="red">red</button>
+  <button id="blue">blue</button>
+
+  <script>
+  //ここに　id="red"の要素を取得する命令を書きます
+  // let red = document.getElementById('red');
+  // console.log(red.textContent);
+
+  </script>
+</body>
+
+</html>

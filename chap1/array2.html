@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>配列の使い方</title>
+</head>
+
+<body>
+    <h1>配列の使い方</h1>
+    <script>
+        let data = [10, 20, 30, 40];//配列の宣言と定義
+        console.log(data[0]);
+        console.log(data);
+        console.log('配列の一番目は' + data[0]);
+        console.log('配列の一番目は' + data[0]);
+        console.log('配列の一番目は${data[0]}');//文字列の中に変数を書くとき
+
+        let x = data[0] + data[1];
+        console.log('配列の一番目と二番目の合計は' + x);
+
+        //動的データ型
+        //静的データ型
+        //データ型
+        let a = 123;
+        console.log(typeof (a));//number型　数列
+
+        let b = '123';
+        console.log(typeof (b));//string型　文字列
+
+        let c = true;
+        console.log(typeof (c));//boolean型　真偽値
+
+        let d = 8 < 10;
+        console.log(typeof (d) + d);//boolean型　真偽値
+
+        let languages = [];//配列の宣言
+        console.log(typeof (languages));//object
+
+        a = 'ABC';
+        console.log(typeof (a));//string型　数列
+
+        languages[0] = '英語';
+        languages[1] = 'ベトナム語';
+        console.log(languages);
+        languages[3] = 'フランス語';
+        console.log(languages);
+
+        languages.splice(2, 1);
+        console.log(languages);
+
+        //配列の要素数
+        console.log(languages.length);
+
+        //全ての要素を処理する
+        //配列languageの要素を全部表示する
+        for (let number of languages) {
+            console.log(number);
+        }
+
+        let num;
+        for (let num of languages) {//変数のスコープ　(参照できる範囲、有効範囲)
+            console.log(num + 'は大好き！');
+        }
+
+        //配列全てのdata要素を処理する
+        for (let num of data) {
+            console.log(num);
+        }
+
+        num = 100;
+        console.log('num' + num);
+        let num;
+
+        console.log(Object.prototype.toString.call(a));
+
+    </script>
+</body>
+
+</html>

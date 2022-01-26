@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<hTMl lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>アラート</title>
+    <script>
+        let i = 1;
+        let abc = 'abc';
+        let w = 3.14;
+        //console.log(w);
+        for (let i = 1; i <= 100; i = i + 1) {
+            //console.log(i);
+            let A1 = i % 3;
+            // if (A1 === 0) {
+            //     console.log('fizz');
+            // }
+            let B1 = i % 5;
+            // if (B1 === 0) {
+            //     console.log('buzz');
+            // }
+            if (A1 === 0 && B1 === 0) {
+                console.log('fizzbuzz');
+            } else if (A1 === 0) {//3の倍数だったら
+                console.log('fizz');
+            } else if (B1 === 0) {
+                console.log('buzz');
+
+            } else {
+                console.log(i);
+            }
+            // if (A1 !== 0 && B1 !== 0) {
+            //     console.log(i);
+            // }
+        }
+        // for (let i = 1; i <= 100; i++) {
+        //     let amari = i % 3; //iを3で割った余りを変数amariに代入する
+        //     if (amari === 0) {//変数amariの余りが0か聞いてる
+        //         console.log(i)
+        //     }
+        // }
+    </script>
+</head>

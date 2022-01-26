@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>関数課題</title>
+</head>
+
+<body>
+    <!--税込み価格を計算する関数including_taxを作成してください。作成した関数は以下に示すサンプルに追記し、税込み価格を表示するプログラムを完成させてください。-->
+    <script>
+        // 税抜き価格を定義
+        let price = 100;
+
+        // 関数including_taxを実行する
+        price = including_tax(price); //右辺の関数が実行されて、その戻り値が左辺に代入される
+
+        price = math.trunc(price);//整数値に
+        //price = math.trunc(including_tax(price)); //(16,18行を1行で書くと)
+        // 税込み価格を書き出し
+        document.write('税込み価格は' + price + 'です');
+
+        // 税込み価格を計算する関数including_taxを作成する
+        function including_tax(tax) {
+            console.log('including_taxが呼ばれた！');
+            tax = tax * 1.1
+            console.log('tax :' + tax)
+
+            return tax//税込み価格を戻り値として返す
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<hTMl lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>fizzbuzzのサンプル</title>
+</head>
+
+<body>
+    <script>
+        // for (let i = 1; i <= 100; i++) {
+        //     if ((i % 15 === 0))
+        //         console.log('fizzbuzz')
+        //     else if ((i % 3 === 0)) {
+        //         console.log('fizz');
+        //     } else if ((i % 5 === 0)) {
+        //         console.log('buzz');
+        //     } else {
+        //         console.log(i)
+        //     }
+        // }
+
+        // for (let i = 1; i <= 100; i++) {
+        //     let msg = '';//表示用の点数　空文字をセットしておく
+        //     //3の倍数
+        //     if ((i % 3 === 0)) {
+        //         msg += 'fizz';//msgの内容に'fizz'という文字が連結される
+        //         //この時点でmsgの内容は 'buzz'か'fizzbuzz'
+        //     }
+        //     //5の倍数
+        //     if ((i % 5 === 0))
+        //         msg += 'buzz';//msgの内容に'buzz'という文字が連結される
+        //     //この時点でmsgの内容は 'buzz'か'fizzbuzz'
+        // }
+        // // 3の倍数でも５の倍数でもなかった場合
+        // if (msg === '') {
+        //     msg += i;
+        // }
+        // console.log(msg);
+
+        sum = 0;
+        for (let i = 1; i <= 100; i++) {
+            sum = sum + i;
+        } console.log(sum);
+
+        sum = 0;
+        for (let i = 1; i <= 50; i++) {
+            if ((i % 2) !== 0) {
+                //比較演算子　!==は左辺と右辺が等しくない時にtrueになる
+                sum++;
+                console.log('i=' + i + ' sum=' + sum);//途中経過の表示で問題外
+            }
+
+        }
+        console.log('50以下の奇数の個数=' + sum);
+
+        for (let i = 1; i <= 50; i++) {
+            //let number = i;
+            if ((i % 2) !== 0) {
+                console.log('奇数です' + 1);
+                sum = sum + 1;
+            }
+        }
+        //繰り返しが終わった後で、奇数の個数を表示する
+        console.log('奇数の個数は' + sum);
+
+    </script>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>dom</title>
+</head>
+
+<body>
+  <div id="large">
+    現在時刻:<span id="date"></span>
+    <div id="box1">1行目(赤文字)</div>
+    <div id="box2">2行目(白文字)</div>
+  </div>
+  <script>
+    // div id=largeの背景の色を変える
+    let large = document.getElementById('large');
+    large.style.backgroundColor = '#0ff'
+    // div id = box1のテキストの内容を変更する
+    let box1 = document.getElementById('box1');
+    box1.textContent = 'ウニと馬刺しが食べたいです';
+    // div id = box2のテキストの内容を変更する
+    let box2 = document.getElementById('box2');
+    box2.textContent = '味噌ラーメンとカツカレーが食べたいです';
+    //現在時刻
+    let current = new Date();//Dateオブジェクトを作成して、現在時刻を取得
+    let date = document.getElementById('date');
+    date.textContent = current.toLocaleString();
+
+  </script>
+</body>
+
+</html>

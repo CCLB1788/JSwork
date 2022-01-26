@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<HTMl lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>h1の出力</title>
+    <style>
+        body {
+            width: 600px;
+            margin: 0 auto;
+            border: dashed 3px aqua;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="log">
+
+    </header>
+    <main id="main">
+
+    </main>
+
+    <script>
+        //くじのitemを作る
+        const data = ['良い日', 'イマイチ', 'うーん'];
+        const images = ['good.png', '中吉.png', 'はずれ.png']
+        // 西暦日付を取得する
+        const date = new Date();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const log = `${month}月${day}日`;
+
+
+        // くじを引く
+        //　0〜１以下の変数に３を掛けて、数値の整数部分を取り出す;
+        // Math.trunc() 関数は、引数として与えた数の小数部の桁を取り除くことによって整数部を返す
+        //くじの何番目か取り出したいためにこの計算をしている
+        let rnd = Math.trunc(Math.random() * 3);
+        console.log('rnd=' + rnd);
+        console.log('data=' + data[rnd]);
+        console.log('img=' + images[rnd]);
+        // 画像がプログラムと別なフォルダにある場合　-> くじの画像のURLをセット
+        // 画像がプログラムと同じフォルダにある場合　-> 34行目は不要。42行目の${url}を${images[rnd]}に変更
+        let url = '../' + images[rnd];
+        //console.log('url='+url);
+
+        document.querySelector('#log').innerHTML = `
+            <h1>${log}運試し</h1>`;
+        document.querySelector('#main').innerHTML = `
+            <h1>${data[rnd]} </h1 >
+            <p> <img src="${url}" alt="${data[rnd]}"></p>`;
+
+
+    </script>
+</body>
+
+</HTMl>

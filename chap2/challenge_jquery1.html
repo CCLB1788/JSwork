@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>カウントダウンタイマー</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+        </script>
+    <script>
+
+        //残り時間の変数
+        let count;
+        let start_flg = false;//スタートボタンが押されているかいないかを保持する変数
+
+        function start_timer() {
+            console.log('start_timerが呼ばれたよ')
+            start_flg = true;
+            //start_timer()2重実行防止のため、スタート後はスタートボタンをクリック不可能状態に変更
+            if (start_flg === true) {
+                $('#start').attr('disabled', 'disabled')
+            }
+            // count += -1;
+            // console.log('count' + count)
+            // $('#count').text(count);
+            //1秒ごとにcount_down関数を実行する
+            timerId = setInterval(count_down, 1000);
+        }
+
+        //残り時間の秒数を1秒ずつ減らす関数
+        function count_down() {
+            console.log('count_downが呼ばれた！ min=' + $('#min').text() + 'sec=' + $('#sec').text());
+            // count += -1;
+            // console.log('count:' + count);
+            // 現在の残り時間（秒）- 1秒を計算する（分と秒から秒数を求める）
+            count = Number($('#min').text()) * 60 + Number($('#sec').text()) - 1;
+            console.log('count:' + count);
+            // 残り時間が０より大きい場合
+            if (count > 0) {
+                // 60で残り時間を割って、分数（ふんすう）を計算
+                let next_min = Math.floor(count / 60);
+                // 60の余りから、秒数を計算
+                let next_sec = count % 60;
+                console.log('min/sec:' + next_min + '/' + next_sec);
+
+                //分(#min)と秒(#sec)の内容を変更する(1秒引いた値に変更する)
+                $('#min').text(next_min);
+                $('#sec').text(next_sec);
+                //$('#count').text(count); // 教科書 p.117に説明あります
+                // 残り時間が０秒になった場合    
+            } else {
+                $('#count').css('display', 'none'); // 秒数を非表示
+                $('#timeup').css('display', 'block'); //タイムアップの文字を表示
+                clearInterval(timerId);
+            }
+        }
+
+        function stop_timer() {
+            console.log('stops_timerが呼ばれたよ')
+            clearInterval(timerId);
+            //スタートボタンをクリック可能状態にする
+            $('#start').removeAttr('disabled');
+        }
+
+        function reset_timer() {
+            console.log('reset_timerが呼ばれたよ！')
+            // setIntervalを停止(繰り返しを停止）
+            stop_timer();
+
+            // 残り時間を03:00に戻す
+            $('#min').text('03');
+            $('#sec').text('00');
+
+            //スタートボタンをクリック可能状態にする
+            $('#start').removeAttr('disabled');
+
+            //タイムアップを非表示にする
+            $('#timeup').css('display', 'none');
+            //残り時間を表示
+            $('#count').css('display', 'block')
+
+
+        }
+
+        $(function () {
+            //タイムアップの文字を非表示
+            $('#timeup').css('display', 'none');
+            // スタートボタンをクリック
+            $('#start').click(start_timer);
+            // ストップボタンをクリック
+            $('#stop').click(stop_timer);
+            // リセットボタンをクリック
+            $('#reset').click(reset_timer);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="main">
+            <div id="timer" class="ceter">
+                <p id="count"><span id="min">03</span>:<span id="sec">00</span></p>
+                <p id="timeup">タイムアップ</p>
+            </div>
+            <div id="button" class="ceter">
+                <button id="start" class="margin_right">スタート</button>
+                <button id="stop" class="margin_right">ストップ</button>
+                <button id="reset">リセット</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>関数の定義方法</title>
+</head>
+
+<body>
+    <h1>関数の定義方法</h1>
+    <script>
+        // 関数の定義
+        function output_hello() {
+            document.write('<p>output_hello関数: hello</p>');
+        }
+        // 引数のある関数の定義
+        function output_hello_name(name) {
+            document.write('<p>output_hello_name関数: hello! ' + name + '</p>');
+        }
+
+        //戻り値
+        function make_hello_name(name) {
+            console.log('make_hello_nameに入った!')
+            //strはローカル変数(関数内で宣言・定義された変数と仮引数も含む)
+            let str = '<p>make_hello_name関数: hello! ' + name + '</p>';
+            return str;
+        }
+
+        // output_hello関数の呼び出し
+        output_hello();
+        // output_hello_name関数の呼び出し
+        output_hello_name('田中');
+        // make_hello_name関数の呼び出し
+        make_hello_name('鈴木'); // 何も起こらない?
+        let hello_name = make_hello_name('鈴木');
+        document.write(hello_name);
+        // let ABC = '佐藤';
+        // output_hello_name(ABC);
+    </script>
+</body>
+
+</html>

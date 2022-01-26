@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<hTMl lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>h1の出力</title>
+    <style>
+        body {
+            width: 600px;
+            margin: 0 auto;
+            border: dashed 3px aqua;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        let rmd1 = Math.ceil(Math.random() * 3);
+        //console.log('0～1以下の変数に3を掛けて、切り上げたもの:', rmd1);
+
+        //おみくじを作る
+
+        if (rmd1 <= 3) {
+
+        } else if (rmd1 === 2) {
+            document.write('<h1>普通</h1>');
+        } else {
+            document.write('<h1>うーん</h1>');
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>JavaScriptの基本を理解していきましょう。</p>
+</body>
+
+</hTML>

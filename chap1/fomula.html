@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<hTMl lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>式と演算子のサンプル</title>
+</head>
+
+<body>
+    <h1>式と演算子</h1>
+    <script>
+        //足し算と引き算
+        let a = 100 + 200 - 50;
+        console.log(a);
+        //掛け算と割り算
+        let b = 100 * 2 / 10;
+        console.log(b);
+        //カッコの利用
+        let c = 100 + 200 * 3;
+        console.log(c);
+        let d = (100 + 200) * 3;
+        console.log(d);
+        //余りの計算
+        let e = 7 % 4;// 7を4で割るとあまりは3
+        console.log(e);
+
+        //正の整数
+        let s = 10;
+        console.log(s);
+        //負の整数
+        let t = -20;
+        console.log(t);
+        //小数
+        let u = 3.1415;
+        console.log(u);
+
+        console.log(1.00 + 2.0);
+        console.log(1 + 2);
+        console.log(9.0 / 2.0);
+
+        //文字列の連結
+        let greeting = 'こんにちは' + '山田さん';
+        console.log(greeting);
+        //数値と文字の連結
+        let age = 20;
+        let introduce = '私は' + 'age' + '歳です';
+        console.log(introduce);
+        //連結の順番
+        let message = '合計金額は' + 100 + 200 + 300 + '円です。';
+        console.log(message);
+        let message2 = '合計金額は' + (100 + 200 + 300) + '円です。';
+        console.log(message2);
+
+        //複合代入演算子
+        let total = 0;
+        //total=total+300を表す。
+        total += 300;
+        //total=total-100を表す。
+        total -= 100;
+        //total=total*3を表す。
+        total *= 3;
+        //total=total/20を表す。
+        total /= 20;
+
+        total += 300;
+        //[=total+300]
+        total -= 100;
+        //[=total-100]
+        total *= 3;
+        //[=total*3]
+        total /= 20;
+        //[=total/20]
+    </script>
+</body>
+
+</html>
